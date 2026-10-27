@@ -3,28 +3,14 @@ set -e
 
 echo "🖨️  Начало установки конфигурации ZENIT для OrcaSlicer..."
 
-# 1. Определение целевой директории конфигурации OrcaSlicer
-CONFIG_DIR=""
+# 1. Определяем все возможные пути к конфигурации OrcaSlicer
+CONFIG_DIRS=(
+    "$HOME/.var/app/com.orcaslicer.OrcaSlicer/config/OrcaSlicer/"
+    "$HOME/snap/orcaslicer/current/.config/OrcaSlicer"
+    "$HOME/.config/OrcaSlicer"
+)
 
-if [ -d "$HOME/.var/app/io.github.softfever.OrcaSlicer/config/OrcaSlicer" ]; then
-    CONFIG_DIR="$HOME/.var/app/io.github.softfever.OrcaSlicer/config/OrcaSlicer"
-    echo "✅ Обнаружена версия Flatpak."
-elif [ -d "$HOME/snap/orcaslicer/current/.config/OrcaSlicer" ]; then
-    CONFIG_DIR="$HOME/snap/orcaslicer/current/.config/OrcaSlicer"
-    echo "✅ Обнаружена версия Snap."
-elif [ -d "$HOME/.config/OrcaSlicer" ]; then
-    CONFIG_DIR="$HOME/.config/OrcaSlicer"
-    echo "✅ Обнаружена стандартная версия (AppImage / Deb / RPM)."
-else
-    # Если OrcaSlicer еще ни разу не запускался, создаем стандартную директорию
-    CONFIG_DIR="$HOME/.config/OrcaSlicer"
-    echo "⚠️  Директория конфигурации не найдена. Будет создана стандартная: $CONFIG_DIR"
-    mkdir -p "$CONFIG_DIR"
-fi
-
-echo "🎯 Целевая директория: $CONFIG_DIR"
-
-# 2. Создание временной директории и скачивание репозитория
+# 2. Создаем временную директорию и скачиваем репозиторий
 TEMP_DIR=$(mktemp -d)
 REPO_URL="https://github.com/itcube26/zenit3d/archive/refs/heads/main.zip"
 
@@ -35,7 +21,6 @@ if ! curl -sSL "$REPO_URL" -o "$TEMP_DIR/zenit3d.zip"; then
     exit 1
 fi
 
-# 3. Распаковка
 echo "📦 Распаковка файлов..."
 if ! command -v unzip &> /dev/null; then
     echo "❌ Утилита 'unzip' не найдена. Установите ее (например: sudo apt install unzip)"
@@ -44,27 +29,43 @@ if ! command -v unzip &> /dev/null; then
 fi
 unzip -q "$TEMP_DIR/zenit3d.zip" -d "$TEMP_DIR"
 
-# 4. Резервное копирование существующих файлов (если они есть)
-BACKUP_DIR="$CONFIG_DIR/zenit_backup_$(date +%Y%m%d_%H%M%S)"
-if [ -d "$CONFIG_DIR/printers" ] || [ -d "$CONFIG_DIR/system" ] || [ -d "$CONFIG_DIR/user" ]; then
-    echo "💾 Создание резервной копии существующих настроек в: $BACKUP_DIR"
-    mkdir -p "$BACKUP_DIR"
-    [ -d "$CONFIG_DIR/printers" ] && cp -r "$CONFIG_DIR/printers" "$BACKUP_DIR/"
-    [ -d "$CONFIG_DIR/system" ] && cp -r "$CONFIG_DIR/system" "$BACKUP_DIR/"
-    [ -d "$CONFIG_DIR/user" ] && cp -r "$CONFIG_DIR/user" "$BACKUP_DIR/"
-fi
+# 3. Проходим по всем возможным директориям и устанавливаем конфиги туда, где они есть
+INSTALLED_COUNT=0
 
-# 5. Копирование новых файлов
-echo "📂 Копирование конфигурации ZENIT..."
-# Примечание: имя папки при распаковке будет zenit3d-main (или имя_ветки)
-cp -r "$TEMP_DIR/zenit3d-main/printers" "$CONFIG_DIR/"
-cp -r "$TEMP_DIR/zenit3d-main/system" "$CONFIG_DIR/"
-cp -r "$TEMP_DIR/zenit3d-main/user" "$CONFIG_DIR/"
+for TARGET_DIR in "${CONFIG_DIRS[@]}"; do
+    if [ -d "$TARGET_DIR" ]; then
+        echo "✅ Найдена активная установка в: $TARGET_DIR"
+        
+        # Создаем резервную копию существующих файлов (если они есть)
+        BACKUP_DIR="$TARGET_DIR/zenit_backup_$(date +%Y%m%d_%H%M%S)"
+        echo "💾 Создание резервной копии в: $BACKUP_DIR"
+        mkdir -p "$BACKUP_DIR"
+        
+        [ -d "$TARGET_DIR/printers" ] && cp -r "$TARGET_DIR/printers" "$BACKUP_DIR/" 2>/dev/null || true
+        [ -d "$TARGET_DIR/system" ] && cp -r "$TARGET_DIR/system" "$BACKUP_DIR/" 2>/dev/null || true
+        [ -d "$TARGET_DIR/user" ] && cp -r "$TARGET_DIR/user" "$BACKUP_DIR/" 2>/dev/null || true
 
-# 6. Очистка временных файлов
+        # Копируем новые файлы конфигурации ZENIT
+        echo "📂 Копирование конфигурации ZENIT..."
+        cp -r "$TEMP_DIR/zenit3d-main/printers" "$TARGET_DIR/"
+        cp -r "$TEMP_DIR/zenit3d-main/system" "$TARGET_DIR/"
+        cp -r "$TEMP_DIR/zenit3d-main/user" "$TARGET_DIR/"
+        
+        ((INSTALLED_COUNT++))
+        echo "----------------------------------------"
+    fi
+done
+
+# 4. Очистка временных файлов
 rm -rf "$TEMP_DIR"
 
+# 5. Итоговый вывод
 echo ""
-echo "🎉 Готово! Конфигурация ZENIT успешно установлена."
-echo "🔄 Пожалуйста, полностью закройте и перезапустите OrcaSlicer."
-echo "💡 После запуска выберите принтер серии ZENIT в меню слева."
+if [ "$INSTALLED_COUNT" -gt 0 ]; then
+    echo "🎉 Готово! Конфигурация ZENIT успешно установлена в $INSTALLED_COUNT директорию(ий)."
+    echo "🔄 Пожалуйста, полностью закройте и перезапустите OrcaSlicer."
+    echo "💡 После запуска выберите принтер серии ZENIT в меню слева."
+else
+    echo "⚠️  Ни одна директория конфигурации OrcaSlicer не найдена."
+    echo "💡 Совет: Запустите OrcaSlicer хотя бы один раз, чтобы он создал папку конфигурации, а затем запустите этот скрипт снова."
+fi
