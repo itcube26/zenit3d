@@ -1,0 +1,162 @@
+{
+    "name": "ZENIT 3D 300 Series",
+    "url": "",
+    "version": "02.03.01.10",
+    "force_update": "0",
+    "description": "ZENIT 3D configurations",
+    "machine_model_list": [
+        {
+            "name": "ZENIT 3D 300",
+            "sub_path": "machine/ZENIT 3D 300.json"
+        },
+        {
+            "name": "ZENIT 3D HT 300",
+            "sub_path": "machine/ZENIT 3D HT 300.json"
+        },
+        {
+            "name": "ZENIT 3D HT 300 PREMIUM",
+            "sub_path": "machine/ZENIT 3D HT 300 PREMIUM.json"
+        },
+        {
+            "name": "ZENIT DUO 300",
+            "sub_path": "machine/ZENIT DUO 300.json"
+        },
+        {
+            "name": "ZENIT DUO SWITCH 300 A",
+            "sub_path": "machine/ZENIT DUO SWITCH 300 A.json"
+        },
+        {
+            "name": "ZENIT DUO SWITCH HT 300",
+            "sub_path": "machine/ZENIT DUO SWITCH HT 300.json"
+        }
+    ],
+    "process_list": [
+        {
+            "name": "fdm_process_common",
+            "sub_path": "process/fdm_process_common.json"
+        },
+        {
+            "name": "fdm_process_marlin_common",
+            "sub_path": "process/fdm_process_marlin_common.json"
+        },
+        {
+            "name": "ZENIT_process_base",
+            "sub_path": "process/ZENIT_process_base.json"
+        },
+		{
+            "name": "0.20mm Standard @ZENIT 300",
+            "sub_path": "process/0.20mm Standard @ZENIT 300.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT 300",
+            "sub_path": "process/0.15mm Optimal @ZENIT 300.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT 300",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT 300.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT 3D 300 0.4 nozzle",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT 3D 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT 3D 300 0.4 nozzle",
+            "sub_path": "process/0.15mm Optimal @ZENIT 3D 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.20mm Standard @ZENIT 3D 300 0.4 nozzle",
+            "sub_path": "process/0.20mm Standard @ZENIT 3D 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT 3D HT 300 0.4 nozzle",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT 3D HT 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT 3D HT 300 0.4 nozzle",
+            "sub_path": "process/0.15mm Optimal @ZENIT 3D HT 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.20mm Standard @ZENIT 3D HT 300 0.4 nozzle",
+            "sub_path": "process/0.20mm Standard @ZENIT 3D HT 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT 3D HT 300 PREMIUM 0.4 nozzle",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT 3D HT 300 PREMIUM 0.4 nozzle.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT 3D HT 300 PREMIUM 0.4 nozzle",
+            "sub_path": "process/0.15mm Optimal @ZENIT 3D HT 300 PREMIUM 0.4 nozzle.json"
+        },
+        {
+            "name": "0.20mm Standard @ZENIT 3D HT 300 PREMIUM 0.4 nozzle",
+            "sub_path": "process/0.20mm Standard @ZENIT 3D HT 300 PREMIUM 0.4 nozzle.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT DUO 300 0.4 nozzle",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT DUO 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT DUO 300 0.4 nozzle",
+            "sub_path": "process/0.15mm Optimal @ZENIT DUO 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.20mm Standard @ZENIT DUO 300 0.4 nozzle",
+            "sub_path": "process/0.20mm Standard @ZENIT DUO 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT DUO SWITCH 300 A 0.4 nozzle",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT DUO SWITCH 300 A 0.4 nozzle.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT DUO SWITCH 300 A 0.4 nozzle",
+            "sub_path": "process/0.15mm Optimal @ZENIT DUO SWITCH 300 A 0.4 nozzle.json"
+        },
+        {
+            "name": "0.20mm Standard @ZENIT DUO SWITCH 300 A 0.4 nozzle",
+            "sub_path": "process/0.20mm Standard @ZENIT DUO SWITCH 300 A 0.4 nozzle.json"
+        },
+        {
+            "name": "0.08mm Extra Fine @ZENIT DUO SWITCH HT 300 0.4 nozzle",
+            "sub_path": "process/0.08mm Extra Fine @ZENIT DUO SWITCH HT 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.15mm Optimal @ZENIT DUO SWITCH HT 300 0.4 nozzle",
+            "sub_path": "process/0.15mm Optimal @ZENIT DUO SWITCH HT 300 0.4 nozzle.json"
+        },
+        {
+            "name": "0.20mm Standard @ZENIT DUO SWITCH HT 300 0.4 nozzle",
+            "sub_path": "process/0.20mm Standard @ZENIT DUO SWITCH HT 300 0.4 nozzle.json"
+        }
+    ],
+    "filament_list": [],
+    "machine_list": [
+	    {
+            "name": "ZENIT 300 Base",
+            "sub_path": "machine/ZENIT 300 Base.json"
+        },
+        {
+            "name": "ZENIT 3D 300 0.4 nozzle",
+            "sub_path": "machine/ZENIT 3D 300 0.4 nozzle.json"
+        },
+        {
+            "name": "ZENIT 3D HT 300 0.4 nozzle",
+            "sub_path": "machine/ZENIT 3D HT 300 0.4 nozzle.json"
+        },
+        {
+            "name": "ZENIT 3D HT 300 PREMIUM 0.4 nozzle",
+            "sub_path": "machine/ZENIT 3D HT 300 PREMIUM 0.4 nozzle.json"
+        },
+        {
+            "name": "ZENIT DUO 300 0.4 nozzle",
+            "sub_path": "machine/ZENIT DUO 300 0.4 nozzle.json"
+        },
+        {
+            "name": "ZENIT DUO SWITCHT 300 A 0.4 nozzle",
+            "sub_path": "machine/ZENIT DUO SWITCH 300 A 0.4 nozzle.json"
+        },
+        {
+            "name": "ZENIT DUO SWITCH HT 300 0.4 nozzle",
+            "sub_path": "machine/ZENIT DUO SWITCH HT 300 0.4 nozzle.json"
+        }
+    ]
+}

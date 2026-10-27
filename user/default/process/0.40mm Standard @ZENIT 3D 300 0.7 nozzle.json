@@ -1,0 +1,23 @@
+{
+    "from": "User",
+    "inherits": "0.20mm Standard @ZENIT 3D 300 0.4 nozzle",
+    "name": "0.40mm Standard @ZENIT 3D 300 0.7 nozzle",
+    "layer_height": "0.4",
+    "initial_layer_height": "0.4",
+    "initial_layer_line_width": "150%",
+    "line_width": "0",
+    "outer_wall_line_width": "0",
+    "inner_wall_line_width": "0",
+    "top_surface_line_width": "0",
+    "internal_solid_infill_line_width": "0",
+    "sparse_infill_line_width": "120%",
+    "support_line_width": "100%",
+    "print_extruder_id": [
+        "1"
+    ],
+    "print_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "print_settings_id": "0.40mm Standard @ZENIT 3D 300 0.7 nozzle",
+    "version": "2.3.1.10"
+}

@@ -1,0 +1,75 @@
+{
+    "type": "filament",
+    "name": "ZENIT ABS @base",
+    "inherits": "fdm_filament_abs",
+    "from": "system",
+    "filament_id": "ZA01",
+    "instantiation": "false",
+    "description": "ZENIT ABS filament with optimized settings for ZENIT 3D printers",
+    "filament_cost": [
+        "20"
+    ],
+    "default_filament_colour": [
+        ""
+    ],
+    "filament_vendor": [
+        "ZENIT"
+    ],
+    "filament_density": [
+        "1.04"
+    ],
+    "filament_max_volumetric_speed": [
+        "12"
+    ],
+    "filament_flow_ratio": [
+        "0.926"
+    ],
+    "nozzle_temperature": [
+        "250"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "nozzle_temperature_range_high": [
+        "280"
+    ],
+    "nozzle_temperature_range_low": [
+        "240"
+    ],
+    "bed_temperature": [
+        "100"
+    ],
+    "bed_temperature_initial_layer": [
+        "105"
+    ],
+    "fan_max_speed": [
+        "80"
+    ],
+    "fan_min_speed": [
+        "10"
+    ],
+    "fan_cooling_layer_time": [
+        "15"
+    ],
+    "close_fan_the_first_x_layers": [
+        "3"
+    ],
+    "slow_down_min_speed": [
+        "10"
+    ],
+    "filament_loading_speed": [
+        "28"
+    ],
+    "filament_loading_speed_start": [
+        "3"
+    ],
+    "filament_unloading_speed": [
+        "90"
+    ],
+    "filament_unloading_speed_start": [
+        "100"
+    ],
+    "filament_ramming_parameters": [
+        "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
+    ]
+}

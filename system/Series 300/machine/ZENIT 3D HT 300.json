@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "ZENIT 3D HT 300",
+    "model_id": "ZENIT_3D_HT_300",
+    "nozzle_diameter": "0.4",
+    "machine_tech": "FFF",
+    "family": "Series 300",
+    "bed_model": "",
+    "bed_texture": "",
+    "hotend_model": "",
+    "default_materials": "ZENIT PLA @base;ZENIT PETG @base;ZENIT ABS @base"
+}

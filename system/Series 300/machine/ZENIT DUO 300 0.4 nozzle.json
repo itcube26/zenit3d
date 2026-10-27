@@ -1,0 +1,36 @@
+{
+    "type": "machine",
+    "name": "ZENIT DUO 300 0.4 nozzle",
+    "inherits": "ZENIT 300 Base",
+    "from": "system",
+    "setting_id": "GM004",
+    "instantiation": "true",
+    "printer_model": "ZENIT DUO 300",
+    "nozzle_diameter": ["0.4", "0.4"],
+    "printer_variant": "0.4",
+    "single_extruder_multi_material": "0",
+    "best_object_pos": "0.5,0.5",
+    "extruders_count": ["2"],
+	"default_filament_profile": [
+        "ZENIT PLA @System", "ZENIT PLA @System"
+    ],
+    "default_print_profile": "0.20mm Standard @ZENIT DUO 300 0.4 nozzle",
+    
+    "extruder_colour": ["#FCE94F", "#FCE94F"],
+    "extruder_offset": ["0x0", "0x0"],
+    "printer_extruder_id": ["1"],
+	"enable_filament_ramming": "0",
+	"manual_filament_change": "0",
+	"purge_in_prime_tower": "0",
+        
+    "emit_machine_limits_to_gcode": "0",
+    
+    "machine_end_gcode": "G92 E0.0\nG1{if max_layer_z < max_print_height} Z{z_offset+min(max_layer_z+30, max_print_height)}{endif}\n{if current_extruder == 1}T0{endif}\nM104 S0\n{if is_extruder_used[1]}M104 T1 S0{endif}\nM140 S0\nM107\nG1 X0 Y105 F3000\nM84",
+    
+    "machine_start_gcode": "G90\nM83\nM204 S[machine_max_acceleration_extruding] T[machine_max_acceleration_retracting]\nM140 S[first_layer_bed_temperature]\n{if is_extruder_used[0]}M104 T0 S[first_layer_temperature]{endif}\n{if is_extruder_used[1]}M104 T1 S[first_layer_temperature]{endif}\nM190 S[first_layer_bed_temperature]\n{if is_extruder_used[0]}M109 T0 S[first_layer_temperature]{endif}\n{if is_extruder_used[1]}M109 T1 S[first_layer_temperature]{endif}\n{if current_extruder == 0}T0{endif}\n{if current_extruder == 1}T1{endif}\nG28\nG1 X115 Y110.0 Z0.3 F1000\nG92 E0.0",
+  
+    "printable_area": ["0x-5", "300x-5", "300x295", "0x295"],
+    "printable_height": "400",
+    
+    "printer_notes": "G29 S1\n; initial load\nG1 X205.0 E19 F1000\nG1 Y1.6\nG1 X5.0 E19 F1000\nG92 E0.0\n; intro line\nG1 Y2.0 Z0.2 F1000\nG1 X65.0 E9.0 F1000\nG1 X105.0 E12.5 F1000\nG92 E0.0"
+}

@@ -1,0 +1,10 @@
+{
+    "type": "process",
+    "name": "0.20mm Standard @ZENIT 300",
+    "inherits": "ZENIT_process_base",
+    "from": "system",
+    "instantiation": "false",
+    "layer_height": "0.2",
+    "bottom_shell_layers": "3",
+    "top_shell_layers": "4"
+}

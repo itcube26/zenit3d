@@ -1,0 +1,12 @@
+{
+    "type": "machine_model",
+    "name": "ZENIT DUO SWITCH HT 300",
+    "model_id": "ZENIT_DUO_SWITCH_HT_300",
+    "nozzle_diameter": "0.4",
+    "machine_tech": "FFF",
+    "family": "Series 300",
+    "bed_model": "",
+    "bed_texture": "",
+    "hotend_model": "",
+    "default_materials": "ZENIT PLA @base;ZENIT PETG @base;ZENIT ABS @base"
+}

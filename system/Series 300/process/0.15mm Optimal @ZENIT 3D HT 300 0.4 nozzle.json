@@ -1,0 +1,10 @@
+{
+    "type": "process",
+    "name": "0.15mm Optimal @ZENIT 3D HT 300 0.4 nozzle",
+    "inherits": "0.15mm Optimal @ZENIT 300",
+    "from": "system",
+    "instantiation": "true",
+    "compatible_printers": [
+        "ZENIT 3D HT 300 0.4 nozzle"
+    ]
+}

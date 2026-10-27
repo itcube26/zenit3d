@@ -1,0 +1,75 @@
+{
+    "type": "filament",
+    "name": "ZENIT PETG @base",
+    "inherits": "fdm_filament_pet",
+    "from": "system",
+    "filament_id": "ZP01",
+    "instantiation": "false",
+    "description": "ZENIT PETG filament with optimized settings for ZENIT 3D printers",
+    "filament_cost": [
+        "30"
+    ],
+    "default_filament_colour": [
+        ""
+    ],
+    "filament_vendor": [
+        "ZENIT"
+    ],
+    "filament_density": [
+        "1.27"
+    ],
+    "filament_max_volumetric_speed": [
+        "12"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "nozzle_temperature": [
+        "235"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "230"
+    ],
+    "nozzle_temperature_range_high": [
+        "245"
+    ],
+    "nozzle_temperature_range_low": [
+        "210"
+    ],
+    "bed_temperature": [
+        "75"
+    ],
+    "bed_temperature_initial_layer": [
+        "75"
+    ],
+    "fan_max_speed": [
+        "100"
+    ],
+    "fan_min_speed": [
+        "80"
+    ],
+    "fan_cooling_layer_time": [
+        "10"
+    ],
+    "close_fan_the_first_x_layers": [
+        "2"
+    ],
+    "slow_down_min_speed": [
+        "8"
+    ],
+    "filament_loading_speed": [
+        "28"
+    ],
+    "filament_loading_speed_start": [
+        "3"
+    ],
+    "filament_unloading_speed": [
+        "90"
+    ],
+    "filament_unloading_speed_start": [
+        "100"
+    ],
+    "filament_ramming_parameters": [
+        "120 100 6.6 6.8 7.2 7.6 7.9 8.2 8.7 9.4 9.9 10.0| 0.05 6.6 0.45 6.8 0.95 7.8 1.45 8.3 1.95 9.7 2.45 10 2.95 7.6 3.45 7.6 3.95 7.6 4.45 7.6 4.95 7.6"
+    ]
+}

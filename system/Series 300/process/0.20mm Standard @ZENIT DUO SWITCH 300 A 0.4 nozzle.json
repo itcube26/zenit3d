@@ -1,0 +1,10 @@
+{
+    "type": "process",
+    "name": "0.20mm Standard @ZENIT DUO SWITCH 300 A 0.4 nozzle",
+    "inherits": "0.20mm Standard @ZENIT 300",
+    "from": "system",
+    "instantiation": "true",
+    "compatible_printers": [
+        "ZENIT DUO SWITCH 300 A 0.4 nozzle"
+    ]
+}
